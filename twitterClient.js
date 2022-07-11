@@ -1,12 +1,11 @@
-const TwitterApi = require("twitter-api-v2");
+const {TwitterApi} = require("twitter-api-v2");
+const keys = require("./keys.js");
 
 const client = new TwitterApi({
-    appKey: "",
-    appSecret: "",
-    accessToken: "",
-    accessSecret: ""
-})
+    appKey: keys.appKey,
+    appSecret: keys.appSecret,
+    accessToken: keys.accessToken,
+    accessSecret: keys.accessSecret
+});
 
-const rwClient = client.readWrite;
-
-module.exports = rwClient;
+module.exports = client;
